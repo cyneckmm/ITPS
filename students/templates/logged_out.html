@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Enrollment Complete</h2>
+
+{% if name %}
+    <p>Goodbye, {{ name }}. You have been logged out after enrollment.</p>
+{% else %}
+    <p>You are now logged out.</p>
+{% endif %}
+
+<p><a href="/login/">Log in again</a></p>
+{% endblock %}

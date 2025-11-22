@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student Enrollment Form</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <h3>Student Information</h3>
+    {{ s_form.as_p }}
+
+    <h3>Course Enrollment</h3>
+    {{ c_form.as_p }}
+
+    <h3>Class Schedule</h3>
+    {{ cls_form.as_p }}
+
+    <h3>Guardian Information</h3>
+    {{ g_form.as_p }}
+
+    <div style="text-align:right;">
+        <button type="submit">Submit Enrollment</button>
+    </div>
+</form>
+{% endblock %}

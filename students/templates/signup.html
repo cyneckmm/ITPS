@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Create an account</h2>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+</form>
+
+<p style="margin-top:12px;">Already have an account? <a href="/login/">Login</a></p>
+{% endblock %}

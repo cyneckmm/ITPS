@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'dashboard' %}">Dashboard</a>
+<h3>Welcome, {{ request.user.username }}!</h3>
+
+<p>
+{% if student_info %}
+    You have already submitted your enrollment information.
+{% else %}
+    You have not submitted your enrollment information yet.
+{% endif %}
+</p>
+
+<div style="display:flex; gap:12px; margin-top:18px;">
+    <a href="/enrollee/"><button>Continue Enrollment</button></a>
+    <a href="/enrollee/view/"><button>View My Information</button></a>
+    <a href="/logout/"><button class="secondary">Logout</button></a>
+</div>
+{% endblock %}

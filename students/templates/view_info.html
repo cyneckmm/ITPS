@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Enrollment Information</h2>
+
+{% if student_info %}
+    <p><strong>Name:</strong> {{ student_info.full_name }}</p>
+    <p><strong>Email:</strong> {{ student_info.email }}</p>
+    <p><strong>Age:</strong> {{ student_info.age }}</p>
+    <p><strong>Birthday:</strong> {{ student_info.birthday }}</p>
+    <p><strong>Address:</strong> {{ student_info.permanent_address }}, {{ student_info.street }}, {{ student_info.barangay }}, {{ student_info.city }}, {{ student_info.zip_code }}</p>
+{% else %}
+    <p>You have not submitted any information yet.</p>
+{% endif %}
+
+<a href="/dashboard/"><button>Back to Dashboard</button></a>
+{% endblock %}

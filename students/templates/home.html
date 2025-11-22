@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horizon University</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0b1f3b; 
+            color: #f5f5f5;
+        }
+
+        .hero {
+            max-width: 900px;
+            width: 100%;
+            padding: 40px 30px;
+            background: rgba(11, 31, 59, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .hero-left {
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-right: 20px;
+        }
+
+        .hero-right {
+            padding-left: 10px;
+        }
+
+        .logo-box {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 16px;
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .school-name {
+            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #cbd5ff;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #d0d7ff;
+            margin-bottom: 24px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #1f4b88;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #295ca4;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #9fb4ff;
+            color: #d0d7ff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(159, 180, 255, 0.12);
+        }
+
+        .hero-right p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #ffd76b;
+            font-weight: 600;
+        }
+
+        @media (max-width: 720px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-left {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+
+            .hero-right {
+                padding-left: 0;
+                padding-top: 10px;
+            }
+
+            .actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-left">
+            <div class="logo-box">
+                <img src="{% static 'images/logo.png' %}" alt="H University Logo">
+            </div>
+            <div class="school-name">Horizon Scholars Academy University</div>
+            <p class="subtitle">Online Enrollment Portal</p>
+        </div>
+
+        <div class="hero-right">
+            <h1>Welcome, Future Student!</h1>
+            <p>
+                Enroll quickly and securely through our online system.
+                Manage your information, track your status, and stay updated
+                with important announcements.
+            </p>
+            <p class="highlight">
+                Get started by creating an account or logging in to your dashboard.
+            </p>
+            <div class="actions">
+                <a href="{% url 'signup' %}" class="btn btn-primary">Sign up</a>
+                <a href="{% url 'login' %}" class="btn btn-outline">Log in</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
